@@ -1,42 +1,59 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
-import styled from "styled-components"
+import {
+  StyledImgWrapper,
+  ImagesWrapper,
+  Wrapper,
+  DescriptionWrapper,
+  ContentWrapper,
+} from "../components/styledComponents/StyledProjektyTemplate"
 import MainTemplate from "./MainTemplate"
+import "@reach/dialog/styles.css"
+import { SRLWrapper } from "simple-react-lightbox"
+import PageTitle from "../components/atoms/PageTitle"
 
-const StyledImgWrapper = styled(Img)`
-  width: 300px;
-`
-
-const StyledBigImgWrapper = styled(Img)`
-  width: 500px;
-`
+const options = {
+  buttons: {
+    showDownloadButton: false,
+    showAutoplayButton: false,
+    showThumbnailsButton: false,
+  },
+}
 
 const ProjektyTemplate = ({ data }) => {
   const { title, description, featuredImage, gallery } = data.datoCmsProjekt
-  const [bigImage, setBigImage] = useState({ ...gallery[0] })
+  // const [bigImage, setBigImage] = useState({ ...gallery[0] })
 
-  const openImage = filename => {
-    const filteredGallery = gallery.find(el => el.filename === filename)
-    setBigImage(filteredGallery)
-    console.log(bigImage)
-  }
+  // const openImage = url => {
+  //   const filteredGallery = gallery.find(el => el.url === url)
+  //   setBigImage(filteredGallery)
+  //   console.log(filteredGallery)
+  // }
 
   return (
     <MainTemplate>
-      <h1>{title}</h1>
-      <StyledImgWrapper fluid={featuredImage.fluid} />
-      {gallery.map(el => {
-        return (
-          <>
-            <div onClick={() => openImage(el.filename)}>
-              <StyledImgWrapper fluid={el.fluid} />
-            </div>
-          </>
-        )
-      })}
-      <StyledBigImgWrapper fluid={bigImage.fluid} />
-      {console.log(bigImage)}
+      <Wrapper>
+        <PageTitle>{title}</PageTitle>
+        {/* <StyledImgWrapper fluid={featuredImage.fluid} /> */}
+        <ContentWrapper>
+          <DescriptionWrapper>
+            <p>{description}</p>
+          </DescriptionWrapper>
+          <SRLWrapper options={options}>
+            <ImagesWrapper>
+              {gallery.map(el => {
+                return (
+                  <div key={el.url}>
+                    <a href={el.url}>
+                      <StyledImgWrapper fluid={el.fluid} />
+                    </a>
+                  </div>
+                )
+              })}
+            </ImagesWrapper>
+          </SRLWrapper>
+        </ContentWrapper>
+      </Wrapper>
     </MainTemplate>
   )
 }
@@ -48,7 +65,7 @@ export const query = graphql`
       slug
       description
       gallery {
-        filename
+        url
         fluid {
           ...GatsbyDatoCmsFluid
         }

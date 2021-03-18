@@ -1,22 +1,27 @@
 import React from "react"
 import MainTemplate from "../../templates/MainTemplate"
 import { graphql } from "gatsby"
-import PostCard from "../../components/PostCard"
+import Card from "../../components/molecules/Card"
+import PageTitle from "../../components/atoms/PageTitle"
 
 const Projekty = ({ data }) => {
   return (
     <MainTemplate>
-      {data.allDatoCmsProjekt.nodes.map(el => {
-        return (
-          <PostCard
-            key={el.title}
-            description={el.description}
-            title={el.title}
-            image={el.featuredImage.fluid}
-            slug={el.slug}
-          />
-        )
-      })}
+      <PageTitle>Projekty</PageTitle>
+      {data.allDatoCmsProjekt.nodes.map(
+        ({ title, description, featuredImage, slug }) => {
+          return (
+            <Card
+              key={title}
+              description={description}
+              title={title}
+              image={featuredImage.fluid}
+              slug={slug}
+              clickMe="zobacz więcej"
+            />
+          )
+        }
+      )}
     </MainTemplate>
   )
 }

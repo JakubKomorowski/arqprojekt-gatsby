@@ -5,7 +5,7 @@ export const Wrapper = styled.footer`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #393939;
+  background-color: ${({ theme }) => theme.darkGray};
   height: 180px;
   img {
     width: 160px;
@@ -13,7 +13,7 @@ export const Wrapper = styled.footer`
   }
 `
 export const TextWrapper = styled.div`
-  color: #e6363c;
+  color: ${({ theme }) => theme.mainRed};
   font-weight: 500;
 `
 export const ContactInfo = styled.div`

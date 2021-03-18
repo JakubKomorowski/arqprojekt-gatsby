@@ -21,7 +21,7 @@ const Nav = () => {
     setDropdown(!dropdown)
   }
 
-  const colseDropdown = () => {
+  const closeDropdown = () => {
     setDropdown(false)
   }
   const handleMenuOpen = () => {
@@ -38,18 +38,18 @@ const Nav = () => {
           <NavigationListItem onClick={handleDropdownOpen}>
             <StyledItemArrowWrapper>
               <p> Kopuły </p>
-              <StyledArrow dropdown={dropdown} />
+              <StyledArrow $dropdown={dropdown} />
             </StyledItemArrowWrapper>
-            <DropdownUl dropdown={dropdown} menuOpen={menuOpen}>
-              <DropdownLi>
-                <Link to="/kopuly/realizacje">Realizacje</Link>
-              </DropdownLi>
-              <DropdownLi>
-                <Link to="/kopuly/projekty">Projekty</Link>
-              </DropdownLi>
-              <DropdownLi>
-                <Link to="/kopuly/cennik">Cennik</Link>
-              </DropdownLi>
+            <DropdownUl $dropdown={dropdown} menuOpen={menuOpen}>
+              <Link to="/kopuly/realizacje">
+                <DropdownLi>Realizacje</DropdownLi>
+              </Link>
+              <Link to="/kopuly/projekty">
+                <DropdownLi>Projekty</DropdownLi>
+              </Link>
+              <Link to="/kopuly/cennik">
+                <DropdownLi>Cennik</DropdownLi>
+              </Link>
             </DropdownUl>
           </NavigationListItem>
 
@@ -65,7 +65,7 @@ const Nav = () => {
         <StyledBurger
           onClick={() => {
             handleMenuOpen()
-            colseDropdown()
+            closeDropdown()
           }}
           menuOpen={menuOpen}
         >

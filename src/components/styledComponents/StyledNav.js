@@ -36,9 +36,9 @@ export const NavigationList = styled.ul`
   list-style: none;
   a {
     text-decoration: none;
-    color: #747474;
+    color: ${({ theme }) => theme.gray};
     :hover {
-      color: #e6363c;
+      color: ${({ theme }) => theme.mainRed};
     }
   }
   @media (max-width: 768px) {
@@ -62,12 +62,12 @@ export const NavigationListItem = styled.li`
   margin-left: 40px;
   padding: 1rem 0;
   font-size: 0.9rem;
-  color: #747474;
+  color: ${({ theme }) => theme.gray};
   font-weight: 500;
   position: relative;
   cursor: pointer;
   :hover {
-    color: #e6363c;
+    color: ${({ theme }) => theme.mainRed};
   }
   @media (max-width: 768px) {
     margin: 0;
@@ -81,22 +81,21 @@ export const NavigationListItem = styled.li`
 
 export const DropdownUl = styled.ul`
   list-style: none;
-  height: ${props => (props.dropdown ? "200px" : "0px")};
+  height: ${props => (props.$dropdown ? "200px" : "0px")};
   position: relative;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
   top: 15px;
-  border-left: ${props => (props.dropdown ? "2px solid #e6363c" : "none")};
+  border-left: ${props => (props.$dropdown ? "2px solid #e6363c" : "none")};
   text-align: left;
   @media (min-width: 768px) {
     position: absolute;
     top: 55px;
     background-color: white;
     left: -20px;
-    border-top: ${props => (props.dropdown ? "2px solid #e6363c" : "none")};
     width: 150px;
     border-left: none;
-    height: ${props => (props.dropdown ? "180px" : "0px")};
+    height: ${props => (props.$dropdown ? "175px" : "0px")};
     -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
@@ -105,8 +104,9 @@ export const DropdownUl = styled.ul`
 
 export const DropdownLi = styled.li`
   padding: 20px;
+
   :hover {
-    color: #e6363c;
+    color: ${({ theme }) => theme.mainRed};
   }
   @media (max-width: 768px) {
     padding: 25px;
@@ -115,7 +115,7 @@ export const DropdownLi = styled.li`
 
 export const StyledArrow = styled(FaAngleDown)`
   transition: 0.2s;
-  transform: ${props => (props.dropdown ? "rotate(180deg)" : "rotate(0deg)")};
+  transform: ${props => (props.$dropdown ? "rotate(180deg)" : "rotate(0deg)")};
   margin-top: 2px;
 `
 export const StyledItemArrowWrapper = styled.div`
