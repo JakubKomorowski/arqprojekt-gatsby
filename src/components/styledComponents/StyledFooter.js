@@ -7,6 +7,9 @@ export const Wrapper = styled.footer`
   width: 100%;
   background-color: ${({ theme }) => theme.darkGray};
   height: 180px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
   img {
     width: 160px;
     margin-right: 50px;

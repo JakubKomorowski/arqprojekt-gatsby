@@ -2,6 +2,7 @@ import { Link, graphql } from "gatsby"
 import React from "react"
 import { useState } from "react"
 import logo from "../../assets/images/logo.png"
+import { Link as Scroll } from "react-scroll"
 import {
   Wrapper,
   NavigationWrapper,
@@ -52,15 +53,22 @@ const Nav = () => {
               </Link>
             </DropdownUl>
           </NavigationListItem>
-
-          <NavigationListItem>
-            <Link to="/produkty">Inne produkty</Link>
-          </NavigationListItem>
+          <Link to="/produkty">
+            <NavigationListItem>Inne produkty</NavigationListItem>
+          </Link>
 
           <a href="https://www.facebook.com/arq.domy.kopuly" target="_blank">
             <NavigationListItem>Aktualności</NavigationListItem>
           </a>
-          <NavigationListItem>Kontakt</NavigationListItem>
+          <Scroll
+            to="footer"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+          >
+            <NavigationListItem>Kontakt</NavigationListItem>
+          </Scroll>
         </NavigationList>
         <StyledBurger
           onClick={() => {

@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <Wrapper>
+    <Wrapper name="footer">
       <div>
         <img src={logo} alt="arqprojekt" />
       </div>

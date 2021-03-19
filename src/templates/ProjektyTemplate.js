@@ -1,16 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
-import {
-  StyledImgWrapper,
-  ImagesWrapper,
-  Wrapper,
-  DescriptionWrapper,
-  ContentWrapper,
-} from "../components/styledComponents/StyledProjektyTemplate"
 import MainTemplate from "./MainTemplate"
-import "@reach/dialog/styles.css"
-import { SRLWrapper } from "simple-react-lightbox"
-import PageTitle from "../components/atoms/PageTitle"
+import PostTemplate from "./PostTemplate"
+import SEO from "../components/seo"
 
 const options = {
   buttons: {
@@ -21,7 +13,7 @@ const options = {
 }
 
 const ProjektyTemplate = ({ data }) => {
-  const { title, description, featuredImage, gallery } = data.datoCmsProjekt
+  const { title, description, gallery } = data.datoCmsProjekt
   // const [bigImage, setBigImage] = useState({ ...gallery[0] })
 
   // const openImage = url => {
@@ -32,28 +24,13 @@ const ProjektyTemplate = ({ data }) => {
 
   return (
     <MainTemplate>
-      <Wrapper>
-        <PageTitle>{title}</PageTitle>
-        {/* <StyledImgWrapper fluid={featuredImage.fluid} /> */}
-        <ContentWrapper>
-          <DescriptionWrapper>
-            <p>{description}</p>
-          </DescriptionWrapper>
-          <SRLWrapper options={options}>
-            <ImagesWrapper>
-              {gallery.map(el => {
-                return (
-                  <div key={el.url}>
-                    <a href={el.url}>
-                      <StyledImgWrapper fluid={el.fluid} />
-                    </a>
-                  </div>
-                )
-              })}
-            </ImagesWrapper>
-          </SRLWrapper>
-        </ContentWrapper>
-      </Wrapper>
+      <SEO title={title} />
+      <PostTemplate
+        title={title}
+        description={description}
+        gallery={gallery}
+        options={options}
+      />
     </MainTemplate>
   )
 }
