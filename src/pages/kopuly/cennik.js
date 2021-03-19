@@ -31,12 +31,12 @@ const Cennik = ({ data }) => {
                 <p>Świetlik:</p>
               </div>
               <div>
-                <p>10 000zł</p>
-                <p>49 000zł</p>
-                <p>10 800zł</p>
-                <p>16 000zł</p>
-                <p>10 600zł</p>
-                <p>6 200zł</p>
+                <p>10 000 zł</p>
+                <p>49 000 zł</p>
+                <p>10 800 zł</p>
+                <p>16 000 zł</p>
+                <p>10 600 zł</p>
+                <p>6 200 zł</p>
               </div>
             </Prices>
             <Description>
