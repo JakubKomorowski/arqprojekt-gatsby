@@ -17,6 +17,7 @@ module.exports = {
         fonts: [
           `limelight`,
           `Montserrat\:300,400,400i,500,600,700`, // you can also specify font weights and styles
+          `Blinker\:400,700`,
         ],
         display: "swap",
       },

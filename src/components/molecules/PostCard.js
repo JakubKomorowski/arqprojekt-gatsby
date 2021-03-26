@@ -14,7 +14,7 @@ const Wrapper = styled.section`
   box-shadow: 3px 1px 6px 0px rgba(0, 0, 0, 0.15);
   margin: 6rem auto;
   margin-top: 10px;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 20px 20px;
 `
 
 const GrayStripe = styled.div`
@@ -54,7 +54,7 @@ const ImageWrapper = styled(Img)`
   grid-area: mainImage;
 `
 
-const Card = ({ title, description, slug, clickMe, image }) => {
+const PostCard = ({ title, description, slug, clickMe, image }) => {
   return (
     <Wrapper>
       <GrayStripe />
@@ -72,4 +72,4 @@ const Card = ({ title, description, slug, clickMe, image }) => {
   )
 }
 
-export default Card
+export default PostCard

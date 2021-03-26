@@ -5,7 +5,7 @@ import PageTitle from "../components/atoms/PageTitle"
 import { SRLWrapper } from "simple-react-lightbox"
 
 const Wrapper = styled.div`
-  width: 1500px;
+  width: 1300px;
   max-width: 90%;
   margin: 0 auto;
 `
@@ -28,7 +28,7 @@ const DescriptionWrapper = styled.div`
 const ImagesWrapper = styled.div`
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 `
 
 const StyledImgWrapper = styled(Img)`

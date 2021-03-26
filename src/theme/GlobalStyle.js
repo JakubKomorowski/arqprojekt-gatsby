@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
 body{
     font-family: 'Montserrat', sans-serif;
     background-color: #FBFBFB;
+    color: #393939;
+    
 }
 
 button{

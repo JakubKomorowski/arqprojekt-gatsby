@@ -1,7 +1,7 @@
 import React from "react"
 import MainTemplate from "../../templates/MainTemplate"
 import { graphql } from "gatsby"
-import Card from "../../components/molecules/Card"
+import PostCard from "../../components/molecules/PostCard"
 import PageTitle from "../../components/atoms/PageTitle"
 
 const Projekty = ({ data }) => {
@@ -11,7 +11,7 @@ const Projekty = ({ data }) => {
       {data.allDatoCmsProjekt.nodes.map(
         ({ title, description, featuredImage, slug }) => {
           return (
-            <Card
+            <PostCard
               key={title}
               description={description}
               title={title}

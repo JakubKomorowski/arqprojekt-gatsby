@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 60px;
   background: white;
+  /* border-bottom: 1px solid #e6363c; */
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
@@ -16,15 +17,15 @@ export const NavigationWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1500px;
+  width: 1300px;
   max-width: 90%;
   margin: 0 auto;
   height: 100%;
   img {
-    width: 80px;
+    width: 45px;
     margin-top: 5px;
     @media (max-width: 768px) {
-      margin-top: 10px;
+      margin-top: 8px;
     }
   }
   @media (max-width: 768px) {
@@ -88,6 +89,7 @@ export const DropdownUl = styled.ul`
   top: 15px;
   border-left: ${props => (props.$dropdown ? "2px solid #e6363c" : "none")};
   text-align: left;
+  z-index: 10;
   @media (min-width: 768px) {
     position: absolute;
     top: 55px;

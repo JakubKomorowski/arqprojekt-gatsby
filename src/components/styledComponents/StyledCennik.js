@@ -10,7 +10,7 @@ export const GrayBar = styled.div`
 `
 
 export const Wrapper = styled.div`
-  width: 1500px;
+  width: 1300px;
   max-width: 90%;
   margin: 0 auto;
 `

@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import React from "react"
 import PageTitle from "../../components/atoms/PageTitle"
-import Card from "../../components/molecules/Card"
+import PostCard from "../../components/molecules/PostCard"
 import MainTemplate from "../../templates/MainTemplate"
 
 const Realizacje = ({ data }) => {
@@ -11,7 +11,7 @@ const Realizacje = ({ data }) => {
       {data.allDatoCmsRealizacja.nodes.map(
         ({ title, description, featuredImage, slug }) => {
           return (
-            <Card
+            <PostCard
               key={title}
               title={title}
               slug={slug}
