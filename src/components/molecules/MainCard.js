@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import styled, { css } from "styled-components"
-import Media from "react-media"
 
 const Wrapper = styled.div`
   background-color: white;
@@ -75,58 +74,39 @@ const Icon = styled.div`
           top: 20px;
         }
         @media (max-width: 800px) {
+          display: none;
+        }
+      `}
+  }
+`
+
+const IconSmall = styled.div`
+  img {
+    ${({ grid }) =>
+      grid === "a" &&
+      css`
+        @media (min-width: 801px) {
+          display: none;
+        }
+        @media (max-width: 800px) {
           width: 40px;
-          position: relative;
-          left: 0;
-          top: 0;
         }
       `}
   }
 `
 
 const MainCard = ({ title, description, image, image_small, grid }) => {
-  const [windowSize, setWindowSize] = useState(window.innerWidth)
-
-  // const updateWindowWidth = () => {
-  //   setWindowSize(window.innerWidth)
-  // }
-  const breakPointXS = 800
-
-  useEffect(() => {
-    const handleWindowResize = () => setWindowSize(window.innerWidth)
-    window.addEventListener("resize", handleWindowResize)
-    return () => window.removeEventListener("resize", handleWindowResize)
-  }, [])
   return (
     <Wrapper grid={grid}>
       {grid === "a" ? (
         <>
-          {/* <Media queries={{ large: { minWidth: 801 } }}>
-            {matches => (
-              <>
-                {matches.large ? (
-                  <Icon grid={grid}>
-                    <img src={image} alt="arqprojekt" />
-                  </Icon>
-                ) : (
-                  <Icon grid={grid}>
-                    <img src={image_small} alt="arqprojekt" />
-                  </Icon>
-                )}
-              </>
-            )}
-          </Media> */}
-          {typeof window !== "undefined" ? (
-            windowSize <= breakPointXS ? (
-              <Icon grid={grid}>
-                <img src={image_small} alt="arqprojekt" />
-              </Icon>
-            ) : (
-              <Icon grid={grid}>
-                <img src={image} alt="arqprojekt" />
-              </Icon>
-            )
-          ) : null}
+          <IconSmall grid={grid}>
+            <img src={image_small} alt="arqprojekt" />
+          </IconSmall>
+
+          <Icon grid={grid}>
+            <img src={image} alt="arqprojekt" />
+          </Icon>
         </>
       ) : (
         <Icon grid={grid}>
