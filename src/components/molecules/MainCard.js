@@ -89,18 +89,27 @@ const MainCard = ({ title, description, image, image_small, grid }) => {
     <Wrapper grid={grid}>
       {grid === "a" ? (
         <>
-          <Media queries={{ small: { maxWidth: 800 } }}>
-            {matches =>
-              matches.small ? (
-                <Icon grid={grid}>
-                  <img src={image_small} alt="arqprojekt" />
-                </Icon>
-              ) : (
-                <Icon grid={grid}>
-                  <img src={image} alt="arqprojekt" />
-                </Icon>
-              )
-            }
+          <Media
+            queries={{
+              small: "(max-width: 800px)",
+              large: "(min-width: 801px)",
+            }}
+          >
+            {matches => (
+              <>
+                {matches.small && (
+                  <Icon grid={grid}>
+                    <img src={image_small} alt="arqprojekt" />
+                  </Icon>
+                )}
+
+                {matches.large && (
+                  <Icon grid={grid}>
+                    <img src={image} alt="arqprojekt" />
+                  </Icon>
+                )}
+              </>
+            )}
           </Media>
         </>
       ) : (
