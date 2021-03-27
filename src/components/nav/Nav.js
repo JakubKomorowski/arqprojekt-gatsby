@@ -90,12 +90,4 @@ const Nav = () => {
   )
 }
 
-// export const query = graphql`
-//   {
-//     file(name: { eq: "logo" }) {
-//       publicURL
-//     }
-//   }
-// `
-
 export default Nav

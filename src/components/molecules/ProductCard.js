@@ -8,8 +8,6 @@ const Wrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.mainRed};
   height: 400px;
   background-color: white;
-  -webkit-box-shadow: 3px 1px 6px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 3px 1px 6px 0px rgba(0, 0, 0, 0.15);
   a {
     text-decoration: none;
   }

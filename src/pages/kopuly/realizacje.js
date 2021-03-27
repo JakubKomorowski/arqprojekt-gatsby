@@ -8,20 +8,24 @@ const Realizacje = ({ data }) => {
   return (
     <MainTemplate>
       <PageTitle>Realizacje</PageTitle>
-      {data.allDatoCmsRealizacja.nodes.map(
-        ({ title, description, featuredImage, slug }) => {
-          return (
-            <PostCard
-              key={title}
-              title={title}
-              slug={slug}
-              description={description}
-              image={featuredImage.fluid}
-              clickMe="zobacz więcej"
-            />
-          )
-        }
-      )}
+      <ul>
+        {data.allDatoCmsRealizacja.nodes.map(
+          ({ title, description, featuredImage, slug }) => {
+            return (
+              <li>
+                <PostCard
+                  key={title}
+                  title={title}
+                  slug={slug}
+                  description={description}
+                  image={featuredImage.fluid}
+                  clickMe="zobacz więcej"
+                />
+              </li>
+            )
+          }
+        )}
+      </ul>
     </MainTemplate>
   )
 }

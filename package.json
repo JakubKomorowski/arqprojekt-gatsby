@@ -27,6 +27,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
+    "react-media": "^1.10.0",
     "react-scroll": "^1.8.2",
     "simple-react-lightbox": "^3.6.4",
     "slugify": "^1.4.7",

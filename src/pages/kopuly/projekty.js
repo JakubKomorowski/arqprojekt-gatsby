@@ -8,20 +8,24 @@ const Projekty = ({ data }) => {
   return (
     <MainTemplate>
       <PageTitle>Projekty</PageTitle>
-      {data.allDatoCmsProjekt.nodes.map(
-        ({ title, description, featuredImage, slug }) => {
-          return (
-            <PostCard
-              key={title}
-              description={description}
-              title={title}
-              image={featuredImage.fluid}
-              slug={slug}
-              clickMe="zobacz więcej"
-            />
-          )
-        }
-      )}
+      <ul>
+        {data.allDatoCmsProjekt.nodes.map(
+          ({ title, description, featuredImage, slug }) => {
+            return (
+              <li>
+                <PostCard
+                  key={title}
+                  description={description}
+                  title={title}
+                  image={featuredImage.fluid}
+                  slug={slug}
+                  clickMe="zobacz więcej"
+                />
+              </li>
+            )
+          }
+        )}
+      </ul>
     </MainTemplate>
   )
 }

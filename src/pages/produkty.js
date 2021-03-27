@@ -11,10 +11,11 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `
 
-const CardList = styled.div`
+const CardList = styled.ul`
   display: grid;
-  gap: 50px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+  list-style: none;
 `
 
 const Produkty = ({ data }) => {
@@ -26,12 +27,14 @@ const Produkty = ({ data }) => {
           {data.allDatoCmsProdukt.nodes.map(
             ({ title, featuredImage, slug }) => {
               return (
-                <ProductCard
-                  key={title}
-                  title={title}
-                  slug={slug}
-                  image={featuredImage.fluid}
-                />
+                <li>
+                  <ProductCard
+                    key={title}
+                    title={title}
+                    slug={slug}
+                    image={featuredImage.fluid}
+                  />
+                </li>
               )
             }
           )}
