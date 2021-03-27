@@ -95,34 +95,35 @@ const MainCard = ({ title, description, image, image_small, grid }) => {
     window.addEventListener("resize", updateWindowWidth)
     return () => window.removeEventListener("resize", updateWindowWidth)
   }, [])
-  if (typeof window !== `undefined`) {
-    return (
-      <Wrapper grid={grid}>
-        {grid === "a" ? (
-          <>
-            {windowSize ? (
-              <Icon grid={grid}>
-                <img src={image_small} alt="arqprojekt" />
-              </Icon>
-            ) : (
-              <Icon grid={grid}>
-                <img src={image} alt="arqprojekt" />
-              </Icon>
-            )}
-          </>
-        ) : (
-          <Icon grid={grid}>
-            <img src={image} alt="arqprojekt" />
-          </Icon>
-        )}
 
-        <ContentWrapper grid={grid}>
-          <Title>{title}</Title>
-          <CardDesc>{description}</CardDesc>
-        </ContentWrapper>
-      </Wrapper>
-    )
-  }
+  return (
+    <Wrapper grid={grid}>
+      {grid === "a" ? (
+        <>
+          {typeof window === "undefined" ? (
+            <></>
+          ) : windowSize ? (
+            <Icon grid={grid}>
+              <img src={image_small} alt="arqprojekt" />
+            </Icon>
+          ) : (
+            <Icon grid={grid}>
+              <img src={image} alt="arqprojekt" />
+            </Icon>
+          )}
+        </>
+      ) : (
+        <Icon grid={grid}>
+          <img src={image} alt="arqprojekt" />
+        </Icon>
+      )}
+
+      <ContentWrapper grid={grid}>
+        <Title>{title}</Title>
+        <CardDesc>{description}</CardDesc>
+      </ContentWrapper>
+    </Wrapper>
+  )
 }
 
 export default MainCard
