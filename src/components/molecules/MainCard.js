@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled, { css } from "styled-components"
 import Media from "react-media"
 
@@ -85,11 +85,22 @@ const Icon = styled.div`
 `
 
 const MainCard = ({ title, description, image, image_small, grid }) => {
+  const [windowSize, setWindowSize] = useState(window.innerWidth)
+
+  const updateWindowWidth = () => {
+    setWindowSize(window.innerWidth)
+  }
+  const breakPointXS = 800
+
+  useEffect(() => {
+    window.addEventListener("resize", updateWindowWidth)
+    return () => window.removeEventListener("resize", updateWindowWidth)
+  }, [])
   return (
     <Wrapper grid={grid}>
       {grid === "a" ? (
         <>
-          <Media queries={{ large: { minWidth: 801 } }}>
+          {/* <Media queries={{ large: { minWidth: 801 } }}>
             {matches => (
               <>
                 {matches.large ? (
@@ -103,7 +114,18 @@ const MainCard = ({ title, description, image, image_small, grid }) => {
                 )}
               </>
             )}
-          </Media>
+          </Media> */}
+          {typeof window !== "undefined" ? (
+            windowSize < breakPointXS ? (
+              <Icon grid={grid}>
+                <img src={image_small} alt="arqprojekt" />
+              </Icon>
+            ) : (
+              <Icon grid={grid}>
+                <img src={image} alt="arqprojekt" />
+              </Icon>
+            )
+          ) : null}
         </>
       ) : (
         <Icon grid={grid}>
