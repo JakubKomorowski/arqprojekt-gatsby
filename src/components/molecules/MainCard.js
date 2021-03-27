@@ -85,17 +85,18 @@ const Icon = styled.div`
 `
 
 const MainCard = ({ title, description, image, image_small, grid }) => {
-  // const [windowSize, setWindowSize] = useState(window.innerWidth)
+  const [windowSize, setWindowSize] = useState(window.innerWidth)
 
   // const updateWindowWidth = () => {
   //   setWindowSize(window.innerWidth)
   // }
-  // const breakPointXS = 800
+  const breakPointXS = 800
 
-  // useEffect(() => {
-  //   window.addEventListener("resize", updateWindowWidth)
-  //   return () => window.removeEventListener("resize", updateWindowWidth)
-  // }, [])
+  useEffect(() => {
+    const handleWindowResize = () => setWindowSize(window.innerWidth)
+    window.addEventListener("resize", handleWindowResize)
+    return () => window.removeEventListener("resize", handleWindowResize)
+  }, [])
   return (
     <Wrapper grid={grid}>
       {grid === "a" ? (
@@ -116,7 +117,7 @@ const MainCard = ({ title, description, image, image_small, grid }) => {
             )}
           </Media> */}
           {typeof window !== "undefined" ? (
-            window.innerWidth <= 800 ? (
+            windowSize <= breakPointXS ? (
               <Icon grid={grid}>
                 <img src={image_small} alt="arqprojekt" />
               </Icon>
