@@ -16,6 +16,8 @@ const StyledButton = styled.button`
   &:hover {
     background-color: ${({ red, theme }) =>
       red ? theme.hooverRed : theme.mainRed};
+    border: 2px solid
+      ${({ red, theme }) => (red ? theme.hooverRed : theme.mainRed)};
     color: white;
   }
 `

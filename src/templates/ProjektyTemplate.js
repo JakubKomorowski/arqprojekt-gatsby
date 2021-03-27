@@ -13,21 +13,14 @@ const options = {
 }
 
 const ProjektyTemplate = ({ data }) => {
-  const { title, description, gallery } = data.datoCmsProjekt
-  // const [bigImage, setBigImage] = useState({ ...gallery[0] })
-
-  // const openImage = url => {
-  //   const filteredGallery = gallery.find(el => el.url === url)
-  //   setBigImage(filteredGallery)
-  //   console.log(filteredGallery)
-  // }
+  const { title, mainDescription, gallery } = data.datoCmsProjekt
 
   return (
     <MainTemplate>
       <SEO title={title} />
       <PostTemplate
         title={title}
-        description={description}
+        description={mainDescription}
         gallery={gallery}
         options={options}
       />
@@ -40,7 +33,7 @@ export const query = graphql`
     datoCmsProjekt(slug: { eq: $slug }) {
       title
       slug
-      description
+      mainDescription
       gallery {
         url
         fluid {

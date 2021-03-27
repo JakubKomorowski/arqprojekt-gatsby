@@ -12,8 +12,8 @@ const options = {
   },
 }
 
-const RealizacjeTemplate = ({ data }) => {
-  const { title, mainDescription, gallery } = data.datoCmsRealizacja
+const ProduktyTemplate = ({ data }) => {
+  const { title, mainDescription, gallery } = data.datoCmsProdukt
   return (
     <MainTemplate>
       <SEO title={title} />
@@ -28,8 +28,8 @@ const RealizacjeTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-  query singleRealizacjaQuery($slug: String!) {
-    datoCmsRealizacja(slug: { eq: $slug }) {
+  query singleProduktQuery($slug: String!) {
+    datoCmsProdukt(slug: { eq: $slug }) {
       title
       slug
       mainDescription
@@ -48,4 +48,4 @@ export const query = graphql`
   }
 `
 
-export default RealizacjeTemplate
+export default ProduktyTemplate

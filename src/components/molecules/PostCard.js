@@ -52,6 +52,7 @@ const DescriptionButtonWrapper = styled.div`
 
 const ImageWrapper = styled(Img)`
   grid-area: mainImage;
+  max-height: 500px;
 `
 
 const PostCard = ({ title, description, slug, clickMe, image }) => {
