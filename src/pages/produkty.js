@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import PageTitle from "../components/atoms/PageTitle"
 import styled from "styled-components"
 import ProductCard from "../components/molecules/ProductCard"
+import SEO from "../components/seo"
 
 const Wrapper = styled.div`
   width: 1300px;
@@ -21,6 +22,7 @@ const CardList = styled.ul`
 const Produkty = ({ data }) => {
   return (
     <MainTemplate>
+      <SEO title="Produkty" />
       <Wrapper>
         <PageTitle>Inne produkty</PageTitle>
         <CardList>

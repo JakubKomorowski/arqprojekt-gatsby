@@ -2,11 +2,13 @@ import { graphql } from "gatsby"
 import React from "react"
 import PageTitle from "../../components/atoms/PageTitle"
 import PostCard from "../../components/molecules/PostCard"
+import SEO from "../../components/seo"
 import MainTemplate from "../../templates/MainTemplate"
 
 const Realizacje = ({ data }) => {
   return (
     <MainTemplate>
+      <SEO title="Realizacje" />
       <PageTitle>Realizacje</PageTitle>
       <ul>
         {data.allDatoCmsRealizacja.nodes.map(

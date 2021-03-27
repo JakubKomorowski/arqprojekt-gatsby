@@ -20,7 +20,7 @@ import { homePageDate } from "../data/HomePageData"
 const IndexPage = ({ data }) => (
   <>
     <MainTemplate>
-      <SEO title="Home" />
+      <SEO title="Główna" />
       <Wrapper>
         <MainSectionWrapper>
           <ContentWrapper>

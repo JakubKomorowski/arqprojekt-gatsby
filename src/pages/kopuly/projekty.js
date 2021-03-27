@@ -3,10 +3,12 @@ import MainTemplate from "../../templates/MainTemplate"
 import { graphql } from "gatsby"
 import PostCard from "../../components/molecules/PostCard"
 import PageTitle from "../../components/atoms/PageTitle"
+import SEO from "../../components/seo"
 
 const Projekty = ({ data }) => {
   return (
     <MainTemplate>
+      <SEO title="Projekty" />
       <PageTitle>Projekty</PageTitle>
       <ul>
         {data.allDatoCmsProjekt.nodes.map(

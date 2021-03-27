@@ -12,10 +12,12 @@ import {
   Description,
   AllTextWrapper,
 } from "../../components/styledComponents/StyledCennik"
+import SEO from "../../components/seo"
 
 const Cennik = ({ data }) => {
   return (
     <MainTemplate>
+      <SEO title="Cennik" />
       <Wrapper>
         <PageTitle>Przykładowa wycena</PageTitle>
         <GrayBar>Kopuła ARQ-35</GrayBar>
