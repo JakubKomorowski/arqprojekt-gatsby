@@ -1,4 +1,4 @@
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import React from "react"
 import { useState } from "react"
 import logo from "../../assets/images/logo.png"
@@ -57,7 +57,11 @@ const Nav = () => {
             <NavigationListItem>Inne produkty</NavigationListItem>
           </Link>
 
-          <a href="https://www.facebook.com/arq.domy.kopuly" target="_blank">
+          <a
+            href="https://www.facebook.com/arq.domy.kopuly"
+            target="_blank"
+            rel="noreferrer"
+          >
             <NavigationListItem>Aktualności</NavigationListItem>
           </a>
           <Scroll

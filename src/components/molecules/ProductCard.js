@@ -55,7 +55,6 @@ const ProductCard = ({ title, image, slug }) => {
         <ImageWrapper>
           <StyledImg className="img" fluid={image} />
         </ImageWrapper>
-
         <TitleWrapper>
           <Title>{title}</Title>
         </TitleWrapper>
