@@ -10,12 +10,13 @@ const Wrapper = styled.div`
   width: 1300px;
   max-width: 90%;
   margin: 0 auto;
+  margin-bottom: 3rem;
 `
 
 const CardList = styled.ul`
   display: grid;
   gap: 3rem;
-  grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   list-style: none;
 `
 
