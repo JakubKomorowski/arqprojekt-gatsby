@@ -10,11 +10,12 @@ export const MainSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80vh;
+  height: 70vh;
   max-height: 700px;
-
-  @media (max-width: 400px) {
-    height: 90vh;
+  min-height: 300px;
+  margin-top: 60px;
+  @media (max-width: 330px) {
+    height: 80vh;
   }
 `
 export const ContentWrapper = styled.div`
