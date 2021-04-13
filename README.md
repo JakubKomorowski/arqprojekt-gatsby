@@ -9,8 +9,8 @@ It is a commercial project built for the real-estate company.
 
 ## Main Tech stack:
 
-Gatsby
-Styled-Components,
+- Gatsby
+- Styled-Components
 
 ## Getting started:
 
