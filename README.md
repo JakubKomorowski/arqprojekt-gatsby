@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project uses Gatsby - an open-source frontend framework based on React that is known for the good performance and SEO.
+This project uses Gatsby - an open-source frontend framework based on React. This framework is known for the good performance and SEO.
 It is a commercial project built for the real-estate company.
 
 ### Live demo: https://mystifying-lovelace-0b3e0c.netlify.app
@@ -11,6 +11,8 @@ It is a commercial project built for the real-estate company.
 
 - Gatsby
 - Styled-Components
+- DatoCMS
+- GraphQL
 
 ## Getting started:
 
