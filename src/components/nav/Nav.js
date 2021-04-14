@@ -71,7 +71,9 @@ const Nav = () => {
             offset={0}
             duration={500}
           >
-            <NavigationListItem>Kontakt</NavigationListItem>
+            <NavigationListItem style={{ paddingRight: "0" }}>
+              Kontakt
+            </NavigationListItem>
           </Scroll>
         </NavigationList>
         <StyledBurger

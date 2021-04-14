@@ -5,7 +5,7 @@
 This project uses Gatsby - an open-source frontend framework based on React. This framework is known for the good performance and SEO.
 It is a commercial project built for the real-estate company.
 
-### Live demo: https://mystifying-lovelace-0b3e0c.netlify.app
+### Live demo: https://arqprojekt.pl/
 
 ## Main Tech stack:
 

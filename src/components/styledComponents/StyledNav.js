@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 60px;
   background: white;
-  /* border-bottom: 1px solid #e6363c; */
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
@@ -35,6 +34,7 @@ export const NavigationWrapper = styled.nav`
 export const NavigationList = styled.ul`
   display: flex;
   list-style: none;
+
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.gray};
@@ -60,18 +60,18 @@ export const NavigationList = styled.ul`
 `
 
 export const NavigationListItem = styled.li`
-  margin-left: 40px;
-  padding: 1rem 0;
+  padding: 1rem 1.3rem;
   font-size: 0.9rem;
   color: ${({ theme }) => theme.gray};
   font-weight: 500;
   position: relative;
   cursor: pointer;
+
   :hover {
     color: ${({ theme }) => theme.mainRed};
   }
   @media (max-width: 768px) {
-    margin: 0;
+    padding: 1rem 0;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -94,7 +94,7 @@ export const DropdownUl = styled.ul`
     position: absolute;
     top: 55px;
     background-color: white;
-    left: -20px;
+    left: 0px;
     width: 150px;
     border-left: none;
     height: ${props => (props.$dropdown ? "175px" : "0px")};
@@ -105,7 +105,7 @@ export const DropdownUl = styled.ul`
 `
 
 export const DropdownLi = styled.li`
-  padding: 20px;
+  padding: 20px 0 20px 20px;
 
   :hover {
     color: ${({ theme }) => theme.mainRed};
