@@ -7,7 +7,7 @@ import ksztalt from "../assets/images/ksztalt.png"
 import czas_konstrukcji from "../assets/images/czas_konstrukcji.png"
 import technologie_small from "../assets/images/technologie_small.png"
 
-export const homePageDate = [
+export const homePageData = [
   {
     grid: "a",
     image: technologie,

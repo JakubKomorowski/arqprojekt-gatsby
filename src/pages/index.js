@@ -15,7 +15,7 @@ import {
 import MainTemplate from "../templates/MainTemplate"
 import Button from "../components/atoms/Button"
 import MainCard from "../components/molecules/MainCard"
-import { homePageDate } from "../data/HomePageData"
+import { homePageData } from "../data/HomePageData"
 
 const IndexPage = ({ data }) => (
   <>
@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => (
           </ImageWrapper>
         </MainSectionWrapper>
         <BlockSectionWrapper>
-          {homePageDate.map(
+          {homePageData.map(
             ({ grid, image, title, description, image_small }) => {
               return (
                 <MainCard
