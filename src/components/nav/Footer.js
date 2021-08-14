@@ -19,11 +19,11 @@ const Footer = () => {
         </div>
 
         <TextWrapper>
-          <p>Arkadiusz Potakowski</p>
+          <p>Tomasz Szarata</p>
           <p>Arq Projekt</p>
           <ContactInfo>
-            <p>e-mail: arek@arqprojekt.pl</p>
-            <p>telefon: (+48) 510 203 874</p>
+            <p>e-mail: tomaszszarata@wp.pl</p>
+            <p>telefon: (+48) 608 013 589</p>
           </ContactInfo>
         </TextWrapper>
       </ContentWrapper>
