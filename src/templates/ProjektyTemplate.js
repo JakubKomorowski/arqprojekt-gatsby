@@ -15,6 +15,8 @@ const options = {
 const ProjektyTemplate = ({ data }) => {
   const { title, mainDescription, gallery } = data.datoCmsProjekt
 
+  console.log(data)
+
   return (
     <MainTemplate>
       <SEO title={title} />
@@ -28,9 +30,30 @@ const ProjektyTemplate = ({ data }) => {
   )
 }
 
+// export const query = graphql`
+//   query singleProjektQuery($slug: String!, $language: String!) {
+//     datoCmsProjekt(slug: { eq: $slug }, locale: { eq: $language }) {
+//       title
+//       slug
+//       mainDescription
+//       gallery {
+//         url
+//         fluid {
+//           ...GatsbyDatoCmsFluid
+//         }
+//       }
+//       featuredImage {
+//         fluid {
+//           ...GatsbyDatoCmsFluid
+//         }
+//       }
+//     }
+//   }
+// `
+
 export const query = graphql`
-  query singleProjektQuery($slug: String!, $language: String!) {
-    datoCmsProjekt(slug: { eq: $slug }, locale: { eq: $language }) {
+  query singleProjektQuery($slug: String!) {
+    datoCmsProjekt(slug: { eq: $slug }) {
       title
       slug
       mainDescription

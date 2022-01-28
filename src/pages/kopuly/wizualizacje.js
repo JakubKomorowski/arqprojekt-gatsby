@@ -32,9 +32,26 @@ const Wizualizacje = ({ data }) => {
   )
 }
 
+// export const query = graphql`
+//   query ProjektyQuery($language: String!) {
+//     allDatoCmsProjekt(filter: { locale: { eq: $language } }) {
+//       nodes {
+//         title
+//         description
+//         slug
+//         featuredImage {
+//           fluid {
+//             ...GatsbyDatoCmsFluid
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
 export const query = graphql`
-  query ProjektyQuery($language: String!) {
-    allDatoCmsProjekt(filter: { locale: { eq: $language } }) {
+  query ProjektyQuery {
+    allDatoCmsProjekt {
       nodes {
         title
         description
