@@ -5,18 +5,18 @@ import PostCard from "../../components/molecules/PostCard"
 import PageTitle from "../../components/atoms/PageTitle"
 import SEO from "../../components/seo"
 
-const Projekty = ({ data }) => {
+const Wizualizacje = ({ data }) => {
   return (
     <MainTemplate>
-      <SEO title="Projekty" />
-      <PageTitle>Projekty</PageTitle>
+      <SEO title="Wizualizacje" />
+      <PageTitle>Przykładowe wizualizacje</PageTitle>
       <ul>
         {data.allDatoCmsProjekt.nodes.map(
           ({ title, description, featuredImage, slug }) => {
             return (
-              <li>
+              <li key={slug}>
                 <PostCard
-                  key={title}
+                  key={slug}
                   description={description}
                   title={title}
                   image={featuredImage.fluid}
@@ -33,8 +33,8 @@ const Projekty = ({ data }) => {
 }
 
 export const query = graphql`
-  query ProjektyQuery {
-    allDatoCmsProjekt {
+  query ProjektyQuery($language: String!) {
+    allDatoCmsProjekt(filter: { locale: { eq: $language } }) {
       nodes {
         title
         description
@@ -49,4 +49,4 @@ export const query = graphql`
   }
 `
 
-export default Projekty
+export default Wizualizacje

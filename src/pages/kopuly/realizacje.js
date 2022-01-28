@@ -14,7 +14,7 @@ const Realizacje = ({ data }) => {
         {data.allDatoCmsRealizacja.nodes.map(
           ({ title, description, featuredImage, slug }) => {
             return (
-              <li>
+              <li key={title}>
                 <PostCard
                   key={title}
                   title={title}

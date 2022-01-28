@@ -3,6 +3,7 @@ import React from "react"
 import { useState } from "react"
 import logo from "../../assets/images/logo.png"
 import { Link as Scroll } from "react-scroll"
+import { Link as I18Link, useI18next } from "gatsby-plugin-react-i18next"
 import {
   Wrapper,
   NavigationWrapper,
@@ -18,6 +19,7 @@ import {
 const Nav = () => {
   const [dropdown, setDropdown] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { language, changeLanguage } = useI18next()
   const handleDropdownOpen = () => {
     setDropdown(!dropdown)
   }
@@ -32,29 +34,35 @@ const Nav = () => {
   return (
     <Wrapper>
       <NavigationWrapper>
-        <Link to="/">
+        <I18Link to="/">
           <img src={logo} alt="arqprojekt" />
-        </Link>
+        </I18Link>
         <NavigationList menuOpen={menuOpen}>
-          <NavigationListItem onClick={handleDropdownOpen}>
+          {/* <NavigationListItem onClick={handleDropdownOpen}>
             <StyledItemArrowWrapper>
               <p> Kopuły </p>
               <StyledArrow $dropdown={dropdown} />
             </StyledItemArrowWrapper>
             <DropdownUl $dropdown={dropdown} menuOpen={menuOpen}>
-              <Link to="/kopuly/realizacje">
+              <I18Link to="/kopuly/realizacje">
                 <DropdownLi>Realizacje</DropdownLi>
-              </Link>
-              <Link to="/kopuly/projekty">
+              </I18Link>
+              <I18Link to="/kopuly/projekty">
                 <DropdownLi>Projekty</DropdownLi>
-              </Link>
+              </I18Link>
               <Link to="/kopuly/cennik">
                 <DropdownLi>Cennik</DropdownLi>
               </Link>
             </DropdownUl>
-          </NavigationListItem>
-          <Link to="/produkty">
-            <NavigationListItem>Inne produkty</NavigationListItem>
+          </NavigationListItem> */}
+          <I18Link to="/kopuly/realizacje">
+            <NavigationListItem>Realizacje</NavigationListItem>
+          </I18Link>
+          <I18Link to="/kopuly/wizualizacje">
+            <NavigationListItem>Wizualizacje</NavigationListItem>
+          </I18Link>
+          <Link to="/produkty/swietlik">
+            <NavigationListItem>Świetlik</NavigationListItem>
           </Link>
 
           <a

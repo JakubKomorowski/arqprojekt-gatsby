@@ -82,7 +82,7 @@ export const NavigationListItem = styled.li`
 
 export const DropdownUl = styled.ul`
   list-style: none;
-  height: ${props => (props.$dropdown ? "200px" : "0px")};
+  height: ${props => (props.$dropdown ? "140px" : "0px")};
   position: relative;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
@@ -97,7 +97,7 @@ export const DropdownUl = styled.ul`
     left: 0px;
     width: 150px;
     border-left: none;
-    height: ${props => (props.$dropdown ? "175px" : "0px")};
+    height: ${props => (props.$dropdown ? "120px" : "0px")};
     -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);

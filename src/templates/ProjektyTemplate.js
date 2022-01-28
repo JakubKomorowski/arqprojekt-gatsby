@@ -29,8 +29,8 @@ const ProjektyTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-  query singleProjektQuery($slug: String!) {
-    datoCmsProjekt(slug: { eq: $slug }) {
+  query singleProjektQuery($slug: String!, $language: String!) {
+    datoCmsProjekt(slug: { eq: $slug }, locale: { eq: $language }) {
       title
       slug
       mainDescription
