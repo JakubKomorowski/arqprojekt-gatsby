@@ -15,8 +15,6 @@ const options = {
 const ProjektyTemplate = ({ data }) => {
   const { title, mainDescription, gallery } = data.datoCmsProjekt
 
-  console.log(data)
-
   return (
     <MainTemplate>
       <SEO title={title} />
