@@ -5,7 +5,7 @@ import PostCard from "../../components/molecules/PostCard"
 import PageTitle from "../../components/atoms/PageTitle"
 import SEO from "../../components/seo"
 
-const Wizualizacje = ({ data }) => {
+const Projekt = ({ data }) => {
   return (
     <MainTemplate>
       <SEO title="Wizualizacje" />
@@ -66,4 +66,4 @@ export const query = graphql`
   }
 `
 
-export default Wizualizacje
+export default Projekt

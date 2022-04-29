@@ -58,8 +58,8 @@ const Nav = () => {
           <I18Link to="/kopuly/realizacje">
             <NavigationListItem>Realizacje</NavigationListItem>
           </I18Link>
-          <I18Link to="/kopuly/wizualizacje">
-            <NavigationListItem>Wizualizacje</NavigationListItem>
+          <I18Link to="/kopuly/projekt">
+            <NavigationListItem>Projekt</NavigationListItem>
           </I18Link>
           <Link to="/produkty/swietlik">
             <NavigationListItem>Świetlik</NavigationListItem>

@@ -41,7 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog post pages.
     projekt.forEach(node => {
       createPage({
-        path: `kopuly/wizualizacje/${node.slug}`,
+        path: `kopuly/projekt/${node.slug}`,
         component: projektyTemplate,
         context: {
           slug: node.slug,

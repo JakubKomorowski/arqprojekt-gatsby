@@ -28,18 +28,20 @@ const IndexPage = ({ data }) => {
           <MainSectionWrapper>
             <ContentWrapper>
               <MainTitle>ARQ Projekt</MainTitle>
-              <TagLine>{t("Dlaczego kopuła")}?</TagLine>
+              {/* <TagLine>{t("Dlaczego kopuła")}?</TagLine> */}
               <MainDesc>
-                Dom w kształcie kopuły jest znany od początków budownictwa. Taka
-                konstrukcja ma wiele zalet i jest chętnie stosowana w wielu
-                krajach na całym świecie, również w Polsce zaczyna zyskiwać
-                coraz większą popularność.
+                Jesteśmy firmą budowlaną specjalizującą się w budowie kopuł w
+                konstrukcji drewnianej. Wykonujemy wszystkie etapy budowy od
+                fundamentu do stanu deweloperskiego. Budujemy i projektujemy
+                kopuły na zgłoszenie do 35 m2 oraz wykonujemy większe obiekty na
+                podstawie projektu budowlanego. Oferujemy również świetliki
+                dachowe zwieńczające kopułę.
               </MainDesc>
               <Link to="/kopuly/realizacje">
                 <Button red>Realizacje</Button>
               </Link>
-              <Link to="/kopuly/wizualizacje">
-                <Button red>Wizualizacje</Button>
+              <Link to="/kopuly/projekt">
+                <Button red>Projekt</Button>
               </Link>
             </ContentWrapper>
             <ImageWrapper>
