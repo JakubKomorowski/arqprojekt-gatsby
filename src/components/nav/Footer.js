@@ -23,7 +23,7 @@ const Footer = () => {
           <p>Arq Projekt</p>
           <ContactInfo>
             <p>e-mail: biuro.arqprojekt@gmail.com</p>
-            <p>telefon: (+48) 608 013 589 lub (+48) 602 223 751</p>
+            <p>telefon: (+48) 608 013 589</p>
           </ContactInfo>
         </TextWrapper>
       </ContentWrapper>
